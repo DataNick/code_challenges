@@ -46,3 +46,15 @@ def compressed(string)
     return new_string
   end
 end
+
+
+# Assume you have a method isSubstring which checks if one word is a substring of another. Given two strings, s1 and s2, write code to check if s2 is a rotation of s1 using only one call to isSubstring (e.g. “waterbottle” is a rotation of “erbottlewat”.
+
+
+def isSubString(string1, string2)
+  if string1.chars.sort == string2.chars.sort
+    return true
+  else
+    return false
+  end
+end
