@@ -11,6 +11,7 @@ mick = Person.new(56)
 
 puts [maria.age,jack.age,mick.age,lisa.age].sort
 
+#merge sort
 def merge(first_array, second_array)
   return second_array if first_array.empty?
   return first_array if second_array.empty?
@@ -76,7 +77,7 @@ end
 
 
 
-#Quick sort
+#insertion sort
 def sort_in_place(to_sort)
 
   for index in 1..(to_sort.length - 1) #going from second index to last index of array
@@ -90,7 +91,16 @@ def sort_in_place(to_sort)
   return to_sort
 end
 
-
+# Write a method to sort an array of strings so that all the anagrams are next to each other.
+Within Enumerable class is group_by method
+Within Hash class is values method
+  values returns an array populated with values from hash #{a: "cars", b: "star"}.values --> ["car", "star"]
+  # group_by { |obj| block } → a_hash click to toggle source
+  # group_by → an_enumerator
+  # Groups the collection by result of the block. Returns a hash where the keys are the evaluated result from the block and the values are arrays of elements in the collection that correspond to the key.
+def anagram(array)
+  return array.group_by{|word| word.chars.sort}.values
+end
 
 
 
