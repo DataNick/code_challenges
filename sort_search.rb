@@ -78,10 +78,22 @@ end
 
 
 #insertion sort
-def sort_in_place(to_sort)
+def sort_in_place(to_sort)#in ascending order
   for index in 1..(to_sort.length - 1) #going from second index to last index of array
     for inner_index in 0..(index - 1)
       if to_sort[inner_index] >= to_sort[index] #on first loop, compare first and second element
+      to_sort.insert(inner_index, to_sort[index])
+      to_sort.delete_at(index + 1)
+      end
+    end
+  end
+  return to_sort
+end
+
+def sort_in_place(to_sort)#in descending order
+  for index in 1..(to_sort.length - 1) #going from second index to last index of array
+    for inner_index in 0..(index - 1)
+      if to_sort[inner_index] <= to_sort[index] #on first loop, compare first and second element - descending
       to_sort.insert(inner_index, to_sort[index])
       to_sort.delete_at(index + 1)
       end

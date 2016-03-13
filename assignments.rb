@@ -1,3 +1,4 @@
+# x and y point to the same object after the assignment x = y
 x = [1,2,3]
 y = x
 y equals [1,2,3]
