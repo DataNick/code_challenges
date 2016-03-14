@@ -13,13 +13,14 @@ puts [maria.age,jack.age,mick.age,lisa.age].sort
 
 
 def binarySearch(array, target)
-  for i in array
+  i = 0
+  array.each do
     if array[i] == target
       return "Target: #{target} is at index #{i}"
     elsif array[i] < target
       i = i + 1
-    else array[i] > target
-      max = i - 1
+    elsif array[i] > target
+      i = i - 1
     end
   end
 end
