@@ -11,6 +11,19 @@ mick = Person.new(56)
 
 puts [maria.age,jack.age,mick.age,lisa.age].sort
 
+
+def binarySearch(array, target)
+  for i in array
+    if array[i] == target
+      return "Target: #{target} is at index #{i}"
+    elsif array[i] < target
+      i = i + 1
+    else array[i] > target
+      max = i - 1
+    end
+  end
+end
+
 #merge sort
 def merge(first_array, second_array)
   return second_array if first_array.empty?
@@ -39,7 +52,7 @@ class QuickSort
   while left_index < right_index
     while to_sort[left_index] <= to_sort[index_of_pivot] and
       left_index < to_sort.length - 1
-        left_index = left_index + 1
+      left_index = left_index + 1
     end
     right_index = right_index - 1 until to_sort[right_index] <= t to_sort[index_of_pivot]
   # swap both elements
@@ -74,8 +87,6 @@ class SelectionSort
     return to_sort
   end
 end
-
-
 
 #insertion sort
 def sort_in_place(to_sort)#in ascending order
@@ -124,6 +135,9 @@ Within Hash class is values method
 def anagram(array)
   return array.group_by{|word| word.chars.sort}.values
 end
+
+#DIVIDE AND CONQUER
+#use this technique for a sorting algorithm whose worst-case running time is much less than that of insertion sort.
 
 
 
