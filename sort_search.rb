@@ -10,19 +10,50 @@ lisa = Person.new(54)
 mick = Person.new(56)
 
 puts [maria.age,jack.age,mick.age,lisa.age].sort
-
-
 def binarySearch(array, target)
-  i = 0
-  array.each do
-    if array[i] == target
-      return "Target: #{target} is at index #{i}"
-    elsif array[i] < target
-      i = i + 1
-    elsif array[i] > target
-      i = i - 1
+  min = 0
+  max = array.length-1
+  while min <= max
+    guess = (min + max) / 2
+    if array[guess] == target
+      return "target acquired #{array.index(target)}"
+    elsif array[guess] < target
+      min = guess + 1
+    else
+      max = guess - 1
     end
   end
+  return -1
+
+end
+
+def binarySearch(array, target)
+  min = array[0]
+  max = array[array.length-1]
+  guess = (min + max) / 2
+  array.each do |i|
+    if array[guess] == target
+      "target acquired at index#{i}"
+    elsif array[guess] < target #guess was too low
+      min = guess +1
+    elsif array[guess] > target #guess was too high
+      max = guess - 1
+    end
+  end
+end
+
+  # array.sort!
+  # array.each do |i|
+  #   if array[i] == target
+  #     return "Target: #{target} is at index #{i}"
+  #   elsif array[i] < target
+  #     i = i + 1
+  #   elsif array[i] > target
+  #     i = i - 1
+  #   else
+  #     puts "#{target} is not in the array."
+  #   end
+  # end
 end
 
 #merge sort
