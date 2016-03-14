@@ -58,3 +58,8 @@ def isSubString(string1, string2)
     return false
   end
 end
+
+#anagram
+def anagram(array)
+  return array.group_by{|word| word.chars.sort}.values
+end
