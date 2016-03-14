@@ -13,7 +13,7 @@ puts [maria.age,jack.age,mick.age,lisa.age].sort
 def binarySearch(array, target)
   min = 0
   max = array.length-1
-  while min <= max
+  while min <= max #if just < then if the target was the last element in array, it would be return -1
     guess = (min + max) / 2
     if array[guess] == target
       return "target acquired #{array.index(target)}"
