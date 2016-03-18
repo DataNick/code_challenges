@@ -1,4 +1,4 @@
-#merge sort
+#merge sort - works in a new array
 def merge(first_array, second_array)
   return second_array if first_array.empty?
   return first_array if second_array.empty?
